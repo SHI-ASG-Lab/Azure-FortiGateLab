@@ -136,6 +136,7 @@ module "Win7" {
   count = var.win7
 
   win7vmName = "${var.Customer}${var.Vendor}"Win7"${count.index}"
+  
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
@@ -155,6 +156,7 @@ module "Win10" {
   count = var.win10
 
   w10vmName = "${var.Customer}${var.Vendor}"Win10"${count.index}"
+  
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
@@ -175,6 +177,7 @@ module "Windows2019DC" {
   count = var.Win19DC
 
   VmName = "${var.Customer}${var.Vendor}"Win19Server"${count.index}"
+  
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
@@ -194,6 +197,7 @@ module "Win10JumpBox" {
   source = "./modules/Win10"
 
   w10vmName = "${var.Customer}${var.Vendor}-Win10-Jumpbox"
+  
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
@@ -215,6 +219,7 @@ module "Kali" {
   source = "./modules/Kali"
 
   kaliVmName = "${var.Customer}${var.Vendor}-Kali-Attacker"
+  
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
