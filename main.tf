@@ -176,7 +176,7 @@ module "Windows2019DC" {
   source = "./modules/Windows2019DC"
   count = var.Win19DC
 
-  VmName = "${var.Customer}${var.Vendor}"Win19Server"${count.index}"
+  VmName = "${var.Customer}${var.Vendor}-Win19Server-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
