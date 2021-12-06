@@ -1,25 +1,23 @@
-region           = 
+region           = eastus
 
-RG_name          = 
+RG_Env_Tag       = dev
 
-RG_Env_Tag       = 
+RG_SP_Name       = Sec
 
-RG_SP_Name       = 
+Requestor        = bnailling
 
-Requestor        =
+Owner            = bnailling
 
-Owner           =
+Customer         = enpro
 
-Customer         = 
-
-Vendor           = 
+Vendor           = cybereason
 
 # Number of Each
 
-win10            = 
+win10            = 1
 
-win7             = 
+win7             = 1
 
-Ubuntu           = 
+Ubuntu           = 1
 
-Win19DC          = 
+Win19DC          = 1
