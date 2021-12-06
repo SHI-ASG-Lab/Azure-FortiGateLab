@@ -25,7 +25,7 @@ variable "ipnum"{
 }
 
 variable "user" {
-  type = map(string)
+  type = string
 }
 
 variable "pass" {
