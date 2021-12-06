@@ -172,7 +172,7 @@ module "win19" {
   source = "./modules/win19"
   count = var.Win19DC
 
-  VmName = "${var.Customer}${var.Vendor}-Win19Server-${count.index}"
+  VmName = "${var.Customer}${var.Vendor}-Win19-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
