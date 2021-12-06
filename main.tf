@@ -192,7 +192,7 @@ module "win19" {
 module "Win10JumpBox" {
   source = "./modules/Win10JumpBox"
 
-  win10vmName  = "${var.Customer}${var.Vendor}-Win10-Jumpbox"
+  w10vmName  = "${var.Customer}${var.Vendor}-Win10-Jumpbox"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
