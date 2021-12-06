@@ -29,7 +29,7 @@ resource "azurerm_virtual_machine" "Win7" {
   name                  = var.win7vmName
   location              = var.RGlocation
   resource_group_name   = var.resource_group_name
-  network_interface_ids = [azurerm_network_interface.W10-intNic.id]
+  network_interface_ids = [azurerm_network_interface.Win7-intNic.id]
   primary_network_interface_id = "azurerm_network_interface.${var.win7vmName}-intNic.id"
   vm_size               = "Standard_D2as_v4"
 
