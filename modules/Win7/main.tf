@@ -20,7 +20,7 @@ resource "azurerm_network_interface" "Win7-intNic" {
 resource "azurerm_marketplace_agreement" "W10" {
   publisher = "MicrosoftWindowsDesktop"
   offer     = "Windows-7"
-  plan      = "win7-enterprise"
+  plan      = "win7-enterprise-ARM"
 }
 
 # Create VM, attach OS Disk, attach Nic(s), associate with vNet
@@ -40,14 +40,14 @@ resource "azurerm_virtual_machine" "Win7" {
   # delete_data_disks_on_termination = true
 
   plan {
-    name = "win7-enterprise"
+    name = "win7-enterprise-ARM"
     publisher = "MicrosoftWindowsDesktop"
     product = "Windows-7"
   }
   storage_image_reference {
     publisher = "MicrosoftWindowsDesktop"
     offer     = "Windows-7"
-    sku       = "win7-enterprise"
+    sku       = "win7-enterprise-ARM"
     version   = "latest"
   }
   storage_os_disk {
