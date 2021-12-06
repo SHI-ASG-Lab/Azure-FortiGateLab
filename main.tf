@@ -128,7 +128,7 @@ module "Ubuntu" {
 }
 # Add in any number of Endpoint Win7 systems from Marketplace as desired
 module "Win7" {
-  source = "./modules/Win10"
+  source = "./modules/Win7"
   count = var.win7
 
   win7vmName = "${var.Customer}${var.Vendor}-Win7-${count.index}"
