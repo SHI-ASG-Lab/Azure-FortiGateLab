@@ -172,7 +172,7 @@ module "Win10" {
 }
 
 # Add in any number of "Windows 2019 Datacenter" Servers
-module "Windows2019DC" {
+module "win19" {
   source = "./modules/Windows2019DC"
   count = var.Win19DC
 
@@ -194,7 +194,7 @@ module "Windows2019DC" {
 
 # Win10 Jumpbox from Marketplace
 module "Win10JumpBox" {
-  source = "./modules/Win10"
+  source = "./modules/Win10JumpBox"
 
   w10vmName = "${var.Customer}${var.Vendor}-Win10-Jumpbox"
   
