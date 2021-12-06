@@ -1,6 +1,6 @@
 # Create a public IP for the system to use
 resource "azurerm_public_ip" "azPubIp" {
-  name = "${var.VmName}-PubIp1"
+  name = "${var.w10vmName}-PubIp1"
   resource_group_name = var.resource_group_name
   location = var.RGlocation
   allocation_method = "Static"
