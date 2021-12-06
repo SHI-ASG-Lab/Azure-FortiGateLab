@@ -16,7 +16,7 @@ variable "tags" {
   type = map(string)
 }
 
-variable "VmName" {
+variable "win10vmName" {
   type = string
 }
 
