@@ -19,10 +19,6 @@ variable "region" {
   type = string
 }
 
-variable "RG_name" {
-  type = string
-}
-
 variable "RG_Env_Tag" {
     type = string
 }
@@ -82,14 +78,14 @@ resource "azurerm_resource_group" "main" {
 }
 
 resource "azurerm_network_security_group" "NSG1" {
-  name                = "${var.RG_name}-NSG"
+  name                = azurerm_resource_group.main.name"-NSG"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
 }
 
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "main" {
-  name                = "${var.RG_name}-vNet"
+  name                = azurerm_resource_group.main.name"-vNet"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   address_space       = ["10.0.0.0/16"]
@@ -173,7 +169,7 @@ module "Win10" {
 
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19" {
-  source = "./modules/win19"
+  source = "./modules/Windows2019DC"
   count = var.Win19DC
 
   VmName = "${var.Customer}${var.Vendor}-Win19Server-${count.index}"
