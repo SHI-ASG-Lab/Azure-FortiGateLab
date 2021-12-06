@@ -29,9 +29,9 @@ resource "azurerm_virtual_machine" "main" {
   # delete_data_disks_on_termination = true
 
   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "20.04-LTS"
+    publisher = "canonical"
+    offer     = "0001-com-ubuntu-pro-focal"
+    sku       = "pro-20_04-lts"
     version   = "latest"
   }
   storage_os_disk {
