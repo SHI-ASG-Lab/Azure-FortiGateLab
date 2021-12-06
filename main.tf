@@ -169,7 +169,7 @@ module "Win10" {
 
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19" {
-  source = "./modules/Windows2019DC"
+  source = "./modules/win19"
   count = var.Win19DC
 
   VmName = "${var.Customer}${var.Vendor}-Win19Server-${count.index}"
