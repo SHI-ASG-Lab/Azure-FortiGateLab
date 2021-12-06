@@ -1,16 +1,16 @@
-region           = eastus
+region           = "eastus"
 
-RG_Env_Tag       = dev
+RG_Env_Tag       = "dev"
 
-RG_SP_Name       = Sec
+RG_SP_Name       = "Sec"
 
-Requestor        = bnailling
+Requestor        = "bnailling"
 
-Owner            = bnailling
+Owner            = "bnailling"
 
-Customer         = enpro
+Customer         = "enpro"
 
-Vendor           = cybereason
+Vendor           = "cybereason"
 
 # Number of Each
 
