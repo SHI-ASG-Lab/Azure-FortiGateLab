@@ -16,7 +16,7 @@ resource "azurerm_network_interface" "W10-intNic" {
 
   ip_configuration {
     name = "internal"
-    subnet_id = var.int_subnet_id
+    subnet_id = var.subnet_id
     private_ip_address_version = "IPv4"
     private_ip_address_allocation = "static"
     private_ip_address = "10.0.1.${var.ipnum}"
