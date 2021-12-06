@@ -206,7 +206,7 @@ module "Win10JumpBox" {
 
   tags = local.common_tags
 
-  ipnum = 2
+  ipnum = 5
   
 }
 
