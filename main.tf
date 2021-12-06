@@ -115,7 +115,8 @@ module "Ubuntu" {
   source = "./modules/Ubuntu"
   count = var.Ubuntu
 
-  UbuntuVmName = "${var.Customer}${var.Vendor}"Ubuntu"${count.index}"
+  UbuntuVmName = "${var.Customer}${var.Vendor}-Ubuntu-${count.index}"
+  
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
@@ -198,7 +199,7 @@ module "Win10JumpBox" {
 
   subnet_id                 = azurerm_subnet.edrsubnet.id
 
-  DNS_Name = join("", [${var.Customer}, ${var.Vendor}, "jump"])
+  DNS_Name = "${var.Customer}${var.Vendor}jump"
 
   user = var.Customer
   pass = "${var.Customer}EDRTest123$"
