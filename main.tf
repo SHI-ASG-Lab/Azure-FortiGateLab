@@ -155,7 +155,7 @@ module "Win10" {
   source = "./modules/Win10"
   count = var.win10
 
-  w10vmName = "${var.Customer}${var.Vendor}"Win10"${count.index}"
+  w10vmName = "${var.Customer}${var.Vendor}-Win10-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
