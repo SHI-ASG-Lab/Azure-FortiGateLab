@@ -26,11 +26,11 @@ resource "azurerm_network_interface" "W10-intNic" {
 }
 
 # Accept Marketplace agreement for W10 system
-#resource "azurerm_marketplace_agreement" "W10" {
-#  publisher = "MicrosoftWindowsDesktop"
-#  offer     = "Windows-10"
-#  plan      = "20h1-pro"
-#}
+resource "azurerm_marketplace_agreement" "W10" {
+  publisher = "MicrosoftWindowsDesktop"
+  offer     = "Windows-10"
+  plan      = "20h1-pro"
+}
 
 # Create VM, attach OS Disk, attach Nic(s), associate with vNet
 
