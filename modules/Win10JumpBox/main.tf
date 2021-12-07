@@ -26,11 +26,11 @@ resource "azurerm_network_interface" "W10-intNic" {
 }
 
 # Accept Marketplace agreement for W10 system
-resource "azurerm_marketplace_agreement" "W10" {
-  publisher = "MicrosoftWindowsDesktop"
-  offer     = "Windows-10"
-  plan      = "20h1-pro"
-}
+#resource "azurerm_marketplace_agreement" "W10" {
+#  publisher = "MicrosoftWindowsDesktop"
+#  offer     = "Windows-10"
+#  plan      = "20h1-pro"
+#}
 
 # Create VM, attach OS Disk, attach Nic(s), associate with vNet
 
@@ -49,14 +49,14 @@ resource "azurerm_virtual_machine" "W10" {
   # delete_data_disks_on_termination = true
 
   plan {
-    name = "20h1-pro"
+    name = "20h2-pro"
     publisher = "MicrosoftWindowsDesktop"
     product = "Windows-10"
   }
   storage_image_reference {
     publisher = "MicrosoftWindowsDesktop"
     offer     = "Windows-10"
-    sku       = "20h1-pro"
+    sku       = "20h2-pro"
     version   = "19041.1348.2111032333"
   }
   storage_os_disk {
