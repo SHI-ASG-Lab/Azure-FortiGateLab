@@ -28,6 +28,12 @@ resource "azurerm_virtual_machine" "main" {
   # Uncomment this line to delete the data disks automatically when deleting the VM
   # delete_data_disks_on_termination = true
 
+  plan {
+    name = "desktop-linux-kali"
+    publisher = "techlatest"
+    product = "desktop-linux-kali"
+  }
+  
   storage_image_reference {
     publisher = "techlatest"
     offer     = "desktop-linux-kali"
