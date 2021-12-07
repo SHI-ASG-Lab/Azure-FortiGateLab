@@ -8,16 +8,16 @@ Requestor        = "bnailling"
 
 Owner            = "bnailling"
 
-Customer         = "enpro"
+Customer         = "lab"
 
-Vendor           = "cybereason"
+Vendor           = "jaketest"
 
 # Number of Each
 
-win10            = 1
+win10            = 0
 
-win7             = 1
+win7             = 0
 
-Ubuntu           = 1
+Ubuntu           = 0
 
-Win19DC          = 1
+Win19DC          = 0
