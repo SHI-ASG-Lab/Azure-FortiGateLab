@@ -49,15 +49,15 @@ resource "azurerm_virtual_machine" "W10" {
   # delete_data_disks_on_termination = true
 
   plan {
-    name = "20h2-pro"
+    name = "win10-21h2-ent"
     publisher = "MicrosoftWindowsDesktop"
     product = "Windows-10"
   }
   storage_image_reference {
     publisher = "MicrosoftWindowsDesktop"
     offer     = "Windows-10"
-    sku       = "20h2-pro"
-    version   = "19041.1348.2111032333"
+    sku       = "win10-21h2-ent"
+    version   = "latest"
   }
   storage_os_disk {
     name              = "${var.w10vmName}-osdisk1"
