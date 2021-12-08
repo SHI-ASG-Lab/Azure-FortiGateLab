@@ -41,6 +41,7 @@ resource "azurerm_virtual_machine" "W10" {
   network_interface_ids = [azurerm_network_interface.W10-intNic.id]
   primary_network_interface_id = "azurerm_network_interface.${var.w10vmName}-intNic.id"
   vm_size               = "Standard_E2_v3"
+  license_type          = "Windows_Client"
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
   delete_os_disk_on_termination = true
