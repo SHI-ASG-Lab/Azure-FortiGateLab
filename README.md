@@ -1,1 +1,1 @@
-# Azure-EDR-Deployment
+# Azure-FortiLab-Deployment
