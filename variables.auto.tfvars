@@ -1,22 +1,16 @@
-region           = "eastus"
+region           = "westus3"
 
 RG_Env_Tag       = "dev"
 
-RG_SP_Name       = "Sec"
+RG_SP_Name       = "LAB"
 
-Requestor        = "bnailling"
+Requestor        = "JWilliams"
 
-Owner            = "bnailling"
+Owner            = "JWilliams"
 
-Customer         = "enpro"
-
-Vendor           = "cybereason"
+Customer         = "LAB"
 
 # Number of Each
-
-win10            = 1
-
-win7             = 1
 
 Ubuntu           = 1
 
