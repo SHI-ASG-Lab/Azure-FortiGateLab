@@ -121,7 +121,7 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["10.0.0.0/16"]
 }
 
- Create subnets within the virtual network
+# Create subnets within the virtual network
 resource "azurerm_subnet" "mgmtsubnet" {
     name           = var.mgmt_Subnet1_name
     resource_group_name = azurerm_resource_group.main.name
@@ -314,7 +314,7 @@ module "win19int" {
   
 }
 
- Add in any number of "Windows 2019 Datacenter" Servers
+# Add in any number of "Windows 2019 Datacenter" Servers
 module "win19ext" {
   source = "./modules/win19"
   count = var.Win19DC_ext
