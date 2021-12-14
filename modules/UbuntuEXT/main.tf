@@ -1,11 +1,11 @@
 # Create NIC for the VM
 resource "azurerm_network_interface" "main" {
-  name                = "${var.UbuntuVmName}-nic"
+  name                = "${var.UbuntuName}-nic"
   location            = var.RGlocation
   resource_group_name = var.resource_group_name
 
   ip_configuration {
-    name                          = "${var.UbuntuVmName}-IP"
+    name                          = "${var.UbuntuName}-IP"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "static"
     private_ip_address = "10.0.1.${var.ipnum}"
@@ -14,7 +14,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  name                  = var.UbuntuVmName
+  name                  = var.UbuntuName
   location              = var.RGlocation
   resource_group_name   = var.resource_group_name
   network_interface_ids = [azurerm_network_interface.main.id]
@@ -34,13 +34,13 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "${var.UbuntuVmName}-osdisk"
+    name              = "${var.UbuntuName}-osdisk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
-    computer_name  = var.UbuntuVmName
+    computer_name  = var.UbuntuName
     admin_username = var.user
     admin_password = var.pass
   }
