@@ -256,7 +256,7 @@ module "UbuntuINT" {
   source = "./modules/UbuntuINT"
   count = var.ubuntu_int
 
-  UbuntuVmName = "${var.Customer}-UbEXT-${count.index}-FortiLab"
+  UbuntuName = "${var.Customer}-UbEXT-${count.index}-FortiLab"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
@@ -277,7 +277,7 @@ module "UbuntuEXT" {
   source = "./modules/UbuntuEXT"
   count = var.ubuntu_ext
 
-  UbuntuVmName = "${var.Customer}-UbINT-${count.index}-FortiLab"
+  UbuntuName = "${var.Customer}-UbINT-${count.index}-FortiLab"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
