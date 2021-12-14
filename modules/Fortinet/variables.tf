@@ -8,6 +8,10 @@ variable "RGlocation" {
   type = string
 }
 
+variable "Customer" {
+  type = string
+}
+
 variable "mgmt_subnet_id" {
   type = string
 }
