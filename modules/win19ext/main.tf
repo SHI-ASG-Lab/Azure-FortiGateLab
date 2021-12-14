@@ -1,12 +1,12 @@
 
 # Create NIC for the VM
 resource "azurerm_network_interface" "main" {
-  name                = "${var.VmName}-nic1"
+  name                = "${var.VmName}-nic"
   location            = var.RGlocation
   resource_group_name = var.resource_group_name
 
   ip_configuration {
-    name                          = "testconfiguration1"
+    name                          = "${var.VmName}-IP"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "static"
     private_ip_address = "10.0.1.${var.ipnum}"
@@ -35,7 +35,7 @@ resource "azurerm_virtual_machine" "main" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "${var.VmName}-osdisk1"
+    name              = "${var.VmName}-osdisk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
