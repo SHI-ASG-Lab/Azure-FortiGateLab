@@ -256,12 +256,12 @@ module "UbuntuINT" {
   source = "./modules/Ubuntu"
   count = var.ubuntu_int
 
-  UbuntuVmName = "${var.Customer}-FortiLab-Ubuntu-${count.index}"
+  UbuntuVmName = "${var.Customer}-UbEXT-${count.index}-FortiLab"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
-  subnet_id                 = azurerm_subnet.intsubnet.id
+  subnet_id = azurerm_subnet.intsubnet.id
 
   ipnum = count.index + 20
 
@@ -277,12 +277,12 @@ module "UbuntuEXT" {
   source = "./modules/Ubuntu"
   count = var.ubuntu_ext
 
-  UbuntuVmName = "${var.Customer}-FortiLab-Ubuntu-${count.index}"
+  UbuntuVmName = "${var.Customer}-UbINT-${count.index}-FortiLab"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
 
-  subnet_id                 = azurerm_subnet.extsubnet.id
+  subnet_id = azurerm_subnet.extsubnet.id
 
   ipnum = count.index + 20
 
@@ -298,7 +298,7 @@ module "win19int" {
   source = "./modules/win19"
   count = var.Win19DC_int
 
-  VmName = "${var.Customer}-FortiLab-Win19-${count.index}"
+  VmName = "${var.Customer}-Win19INT-${count.index}-FortiLab"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
@@ -319,7 +319,7 @@ module "win19ext" {
   source = "./modules/win19"
   count = var.Win19DC_ext
 
-  VmName = "${var.Customer}-FortiLab-Win19-${count.index}"
+  VmName = "${var.Customer}-Win19EXT-${count.index}-FortiLab"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
