@@ -12,6 +12,10 @@ Customer         = "LAB"
 
 # Number of Each
 
-Ubuntu           = 1
+ubuntu_int       = 1
 
-Win19DC          = 1
+ubuntu_ext       = 1
+
+Win19DC_int      = 1
+
+Win19DC_ext      = 1
