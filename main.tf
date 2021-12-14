@@ -238,7 +238,7 @@ resource "azurerm_subnet_route_table_association" "extassoc" {
 }
 
 module "Fortinet" {
-    source = "./modules/FW/Fortinet"
+    source = "./modules/Fortinet"
     #count = local.Fortinet ? 1 : 0 
 
     resource_group_name = azurerm_resource_group.main.name
@@ -253,7 +253,7 @@ module "Fortinet" {
 
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
-  source = "./modules/Ubuntu"
+  source = "./modules/UbuntuINT"
   count = var.ubuntu_int
 
   UbuntuVmName = "${var.Customer}-UbEXT-${count.index}-FortiLab"
@@ -274,7 +274,7 @@ module "UbuntuINT" {
 
 # Add any number of Ubuntu servers
 module "UbuntuEXT" {
-  source = "./modules/Ubuntu"
+  source = "./modules/UbuntuEXT"
   count = var.ubuntu_ext
 
   UbuntuVmName = "${var.Customer}-UbINT-${count.index}-FortiLab"
@@ -295,7 +295,7 @@ module "UbuntuEXT" {
 
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19int" {
-  source = "./modules/win19"
+  source = "./modules/win19int"
   count = var.Win19DC_int
 
   VmName = "${var.Customer}-Win19INT-${count.index}-FortiLab"
@@ -316,7 +316,7 @@ module "win19int" {
 
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19ext" {
-  source = "./modules/win19"
+  source = "./modules/win19ext"
   count = var.Win19DC_ext
 
   VmName = "${var.Customer}-Win19EXT-${count.index}-FortiLab"
