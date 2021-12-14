@@ -66,6 +66,11 @@ variable "Customer" {
   default = "lab"
 }
 
+variable "pword" {
+  type = string
+  default = "SHIisNumber1!"
+}
+
 variable "ubuntu_int" {
   type = number
   default = 1
@@ -261,7 +266,7 @@ module "UbuntuINT" {
   ipnum = count.index + 20
 
   user = var.Customer
-  pass = "${var.Customer}SHIisNumber1!"
+  pass = "${var.Customer}-${var.pword}"
 
   tags = local.common_tags
 
@@ -282,7 +287,7 @@ module "UbuntuEXT" {
   ipnum = count.index + 20
 
   user = var.Customer
-  pass = "${var.Customer}-FortiLab-${var.Customer}SHIisNumber1!"
+  pass = "${var.Customer}-${var.pword}"
 
   tags = local.common_tags
 
@@ -301,7 +306,7 @@ module "win19int" {
   subnet_id                 = azurerm_subnet.intsubnet.id
 
   user = var.Customer
-  pass = "${var.Customer}SHIisNumber1!"
+  pass = "${var.Customer}-${var.pword}"
 
   tags = local.common_tags
 
@@ -322,7 +327,7 @@ module "win19ext" {
   subnet_id                 = azurerm_subnet.extsubnet.id
 
   user = var.Customer
-  pass = "${var.Customer}SHIisNumber1!"
+  pass = "${var.Customer}-${var.pword}"
 
   tags = local.common_tags
 
