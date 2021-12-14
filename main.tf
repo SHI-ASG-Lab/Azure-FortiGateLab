@@ -7,7 +7,7 @@ terraform {
     }
   }
 }
-
+/*
 provider "azurerm" {
   features {}
   subscription_id = var.TF_VAR_ARM_SUBSCRIPTION_ID
@@ -15,7 +15,7 @@ provider "azurerm" {
   client_secret   = var.TF_VAR_ARM_CLIENT_SECRET
   tenant_id       = var.TF_VAR_ARM_TENANT_ID
 }
-
+*/
 
 # Variable Declarations
 
