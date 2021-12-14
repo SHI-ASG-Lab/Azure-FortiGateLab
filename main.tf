@@ -259,7 +259,7 @@ module "Fortinet" {
     resource_group_name = azurerm_resource_group.main.name
     RGlocation = azurerm_resource_group.main.location
  
-    customer_id        = azurerm_
+    customer_id        = var.Customer
     mgmt_subnet_id     = azurerm_subnet.mgmtsubnet.id
     int_subnet_id      = azurerm_subnet.intsubnet.id
     ext_subnet_id      = azurerm_subnet.extsubnet.id 
