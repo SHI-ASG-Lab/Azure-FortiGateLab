@@ -91,6 +91,21 @@ variable "Win19DC_ext" {
   default = 1
 }
 
+variable "mgmt_Subnet1_name" {
+  type = string
+  default = "mgmtSubnet"
+}
+
+variable "int_Subnet2_name" {
+  type = string
+  default = "internalSubnet"
+}
+
+variable "ext_Subnet3_name" {
+  type = string
+  default = "externalSubnet"
+}
+
 locals {
   common_tags = {
     Owner       = var.Owner
