@@ -57,7 +57,7 @@ resource "azurerm_network_interface" "Nic3" {
 
 # Fortinet FW
 resource "azurerm_virtual_machine" "FortinetFW" {
-  name                          = "FortigateFW"
+  name                          = "${var.Customer}-FGNGFW"
   resource_group_name           = var.resource_group_name
   location                      = var.RGlocation
   network_interface_ids         = [azurerm_network_interface.Nic1.id, azurerm_network_interface.Nic2.id, azurerm_network_interface.Nic3.id]
