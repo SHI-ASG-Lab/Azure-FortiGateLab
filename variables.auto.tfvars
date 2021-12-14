@@ -10,6 +10,8 @@ Owner            = "JWilliams"
 
 Customer         = "LAB"
 
+pword            = "SHIisNumber1!"
+
 # Number of Each
 
 ubuntu_int       = 1
