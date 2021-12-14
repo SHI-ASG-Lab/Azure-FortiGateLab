@@ -8,7 +8,7 @@ variable "RGlocation" {
   type = string
 }
 
-variable "Customer" {
+variable "customer_id" {
   type = string
 }
 
