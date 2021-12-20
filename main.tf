@@ -64,7 +64,7 @@ variable "Customer" {
   type = string
   default = "lab"
 }
-/*
+
 variable "pword" {
   type = string
   default = "SHIisNumber1!"
@@ -272,11 +272,12 @@ module "Fortinet" {
 
     tags = local.common_tags
 }
-/*
+
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
   source = "./modules/UbuntuINT"
   count = var.ubuntu_int
+  depends_on = [azurerm_subnet_route_table_association.intassoc]
 
   UbuntuName = "${var.Customer}-UbINT-${count.index}-FortiLab"
   
@@ -298,6 +299,7 @@ module "UbuntuINT" {
 module "UbuntuEXT" {
   source = "./modules/UbuntuEXT"
   count = var.ubuntu_ext
+  depends_on = [azurerm_subnet_route_table_association.extassoc]
 
   UbuntuName = "${var.Customer}-UbEXT-${count.index}-FortiLab"
   
@@ -314,7 +316,7 @@ module "UbuntuEXT" {
   tags = local.common_tags
 
 }
-
+/*
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19int" {
   source = "./modules/win19int"
