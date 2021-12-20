@@ -64,7 +64,7 @@ variable "Customer" {
   type = string
   default = "lab"
 }
-
+/*
 variable "pword" {
   type = string
   default = "SHIisNumber1!"
@@ -161,16 +161,19 @@ resource "azurerm_subnet" "extsubnet" {
 resource "azurerm_subnet_network_security_group_association" "mgmtSubAssocNsg" {
   subnet_id                 = azurerm_subnet.mgmtsubnet.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
+  depends_on               = [azurerm_subnet.mgmtsubnet]
 }
 
 resource "azurerm_subnet_network_security_group_association" "intSubAssocNsg" {
   subnet_id                 = azurerm_subnet.intsubnet.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
+  depends_on               = [azurerm_subnet.intsubnet]
 }
 
 resource "azurerm_subnet_network_security_group_association" "extSubAssocNsg" {
   subnet_id                 = azurerm_subnet.extsubnet.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
+  depends_on               = [azurerm_subnet.extsubnet]
 }
 
 # Create Route Tables and specify routes
@@ -180,6 +183,7 @@ resource "azurerm_route_table" "mgmtRtable" {
   location                      = azurerm_resource_group.main.location
   resource_group_name           = azurerm_resource_group.main.name
   disable_bgp_route_propagation = true
+  depends_on                    = [azurerm_subnet_network_security_group_association.mgmtSubAssocNsg]
 
   route {
     name           = "mgmt2internal"
@@ -201,6 +205,7 @@ resource "azurerm_route_table" "intRtable" {
   location                      = azurerm_resource_group.main.location
   resource_group_name           = azurerm_resource_group.main.name
   disable_bgp_route_propagation = true
+  depends_on                    = [azurerm_subnet_network_security_group_association.intSubAssocNsg]
 
   route {
     name           = "int2mgmt"
@@ -222,6 +227,7 @@ resource "azurerm_route_table" "extRtable" {
   location                      = azurerm_resource_group.main.location
   resource_group_name           = azurerm_resource_group.main.name
   disable_bgp_route_propagation = true
+  depends_on                    = [azurerm_subnet_network_security_group_association.extSubAssocNsg]
 
   route {
     name           = "ext2internal"
@@ -254,6 +260,7 @@ resource "azurerm_subnet_route_table_association" "extassoc" {
 module "Fortinet" {
     source = "./modules/Fortinet"
     #count = local.Fortinet ? 1 : 0 
+    depends_on = [azurerm_subnet_route_table_association.mgmtassoc]
 
     resource_group_name = azurerm_resource_group.main.name
     RGlocation = azurerm_resource_group.main.location
