@@ -69,7 +69,7 @@ variable "pword" {
   type = string
   default = "SHIisNumber1!"
 }
-
+/*
 variable "ubuntu_int" {
   type = number
   default = 1
@@ -79,7 +79,7 @@ variable "ubuntu_ext" {
   type = number
   default = 1
 }
-/*
+*/
 variable "Win19DC_int" {
   type = number
   default = 1
@@ -89,7 +89,7 @@ variable "Win19DC_ext" {
   type = number
   default = 1
 }
-*/
+
 variable "mgmt_Subnet1_name" {
   type = string
   default = "mgmtSubnet"
@@ -272,7 +272,7 @@ module "Fortinet" {
 
     tags = local.common_tags
 }
-
+/*
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
   source = "./modules/UbuntuINT"
@@ -316,11 +316,12 @@ module "UbuntuEXT" {
   tags = local.common_tags
 
 }
-/*
+*/
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19int" {
   source = "./modules/win19int"
   count = var.Win19DC_int
+  depends_on = [azurerm_subnet_route_table_association.intassoc]
 
   VmName = "${var.Customer}-Win19INT-${count.index}-FortiLab"
   
@@ -342,6 +343,7 @@ module "win19int" {
 module "win19ext" {
   source = "./modules/win19ext"
   count = var.Win19DC_ext
+  depends_on = [azurerm_subnet_route_table_association.extassoc]
 
   VmName = "${var.Customer}-Win19EXT-${count.index}-FortiLab"
   
@@ -358,4 +360,4 @@ module "win19ext" {
   ipnum = count.index + 30
   
 }
-*/
+
