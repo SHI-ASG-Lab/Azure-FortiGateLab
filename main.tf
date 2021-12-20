@@ -69,7 +69,7 @@ variable "pword" {
   type = string
   default = "SHIisNumber1!"
 }
-/*
+
 variable "ubuntu_int" {
   type = number
   default = 1
@@ -79,7 +79,7 @@ variable "ubuntu_ext" {
   type = number
   default = 1
 }
-
+/*
 variable "Win19DC_int" {
   type = number
   default = 1
@@ -265,7 +265,7 @@ module "Fortinet" {
 
     tags = local.common_tags
 }
-/*
+
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
   source = "./modules/UbuntuINT"
@@ -307,7 +307,7 @@ module "UbuntuEXT" {
   tags = local.common_tags
 
 }
-
+/*
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19int" {
   source = "./modules/win19int"
