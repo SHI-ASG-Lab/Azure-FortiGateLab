@@ -8,7 +8,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "${var.UbuntuName}-IP"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "static"
-    private_ip_address = "10.0.1.${var.ipnum}"
+    private_ip_address = "10.0.3.${var.ipnum}"
     primary = true
   }
 }
