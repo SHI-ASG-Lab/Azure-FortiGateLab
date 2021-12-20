@@ -69,7 +69,7 @@ variable "pword" {
   type = string
   default = "SHIisNumber1!"
 }
-
+/*
 variable "ubuntu_int" {
   type = number
   default = 1
@@ -89,7 +89,7 @@ variable "Win19DC_ext" {
   type = number
   default = 1
 }
-
+*/
 variable "mgmt_Subnet1_name" {
   type = string
   default = "mgmtSubnet"
@@ -265,7 +265,7 @@ module "Fortinet" {
 
     tags = local.common_tags
 }
-
+/*
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
   source = "./modules/UbuntuINT"
@@ -349,3 +349,4 @@ module "win19ext" {
   ipnum = count.index + 30
   
 }
+*/
