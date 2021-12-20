@@ -19,6 +19,9 @@ resource "azurerm_virtual_machine" "main" {
   location              = var.RGlocation
   resource_group_name   = var.resource_group_name
   network_interface_ids = [azurerm_network_interface.main.id]
+  /*depends_on = [
+    azurerm_subnet_network_security_group_association.intSubAssocNsg
+  ]*/
   primary_network_interface_id = azurerm_network_interface.main.id
   vm_size               = "Standard_DS2_v2"
 
