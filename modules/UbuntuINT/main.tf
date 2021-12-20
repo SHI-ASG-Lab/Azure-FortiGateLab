@@ -23,7 +23,8 @@ resource "azurerm_virtual_machine" "main" {
     azurerm_subnet_network_security_group_association.intSubAssocNsg
   ]*/
   primary_network_interface_id = azurerm_network_interface.main.id
-  vm_size               = "Standard_DS2_v2"
+  vm_size               = "Standard_D2s_v3"
+ 
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
   # delete_os_disk_on_termination = true
@@ -52,6 +53,12 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
 
+  plan {
+    name      = "0001-com-ubuntu-pro-focal"
+    publisher = "canonical"
+    product   = "pro-20_04-lts"
+  }
+  
   tags     = var.tags
 }
 
