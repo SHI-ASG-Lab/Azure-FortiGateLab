@@ -250,7 +250,7 @@ resource "azurerm_subnet_route_table_association" "extassoc" {
   subnet_id      = azurerm_subnet.extsubnet.id
   route_table_id = azurerm_route_table.extRtable.id
 }
-/*
+
 module "Fortinet" {
     source = "./modules/Fortinet"
     #count = local.Fortinet ? 1 : 0 
