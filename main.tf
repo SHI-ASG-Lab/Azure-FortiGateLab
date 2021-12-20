@@ -272,7 +272,7 @@ module "Fortinet" {
 
     tags = local.common_tags
 }
-
+/*
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
   source = "./modules/UbuntuINT"
