@@ -35,7 +35,7 @@ resource "azurerm_virtual_machine" "main" {
   storage_image_reference {
     publisher = "canonical"
     offer     = "0001-com-ubuntu-server-focal"
-    sku       = "20_04-lts"
+    sku       = "20_04-lts-ARM"
     version   = "latest"
   }
   storage_os_disk {
