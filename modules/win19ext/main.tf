@@ -9,7 +9,7 @@ resource "azurerm_network_interface" "main" {
     name                          = "${var.VmName}-IP"
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "static"
-    private_ip_address = "10.0.1.${var.ipnum}"
+    private_ip_address = "10.0.3.${var.ipnum}"
     primary = true
   }
 }
@@ -20,7 +20,7 @@ resource "azurerm_virtual_machine" "main" {
   resource_group_name   = var.resource_group_name
   network_interface_ids = [azurerm_network_interface.main.id]
   primary_network_interface_id = azurerm_network_interface.main.id
-  vm_size               = "Standard_D2as_v4"
+  vm_size               = "Standard_D2s_v3"
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
   # delete_os_disk_on_termination = true
