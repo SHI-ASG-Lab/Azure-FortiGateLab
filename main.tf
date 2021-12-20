@@ -236,7 +236,7 @@ resource "azurerm_route_table" "extRtable" {
     next_hop_in_ip_address = "10.0.1.4"
   }
 }
-/*
+
 # Associate Route Tables with Subnets
 resource "azurerm_subnet_route_table_association" "mgmtassoc" {
   subnet_id      = azurerm_subnet.mgmtsubnet.id
@@ -250,7 +250,7 @@ resource "azurerm_subnet_route_table_association" "extassoc" {
   subnet_id      = azurerm_subnet.extsubnet.id
   route_table_id = azurerm_route_table.extRtable.id
 }
-*/
+
 module "Fortinet" {
     source = "./modules/Fortinet"
     #count = local.Fortinet ? 1 : 0 
