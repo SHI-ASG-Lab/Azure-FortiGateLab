@@ -158,7 +158,7 @@ resource "azurerm_subnet" "extsubnet" {
 }
 
 # Associate Subnets with NSG
-/*resource "azurerm_subnet_network_security_group_association" "mgmtSubAssocNsg" {
+resource "azurerm_subnet_network_security_group_association" "mgmtSubAssocNsg" {
   subnet_id                 = azurerm_subnet.mgmtsubnet.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
 }
@@ -172,7 +172,7 @@ resource "azurerm_subnet_network_security_group_association" "extSubAssocNsg" {
   subnet_id                 = azurerm_subnet.extsubnet.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
 }
-*/
+
 # Create Route Tables and specify routes
 resource "azurerm_route_table" "mgmtRtable" {
   #count = signum(local.Fortinet)
