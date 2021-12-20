@@ -314,7 +314,7 @@ module "UbuntuEXT" {
   tags = local.common_tags
 
 }
-/*
+
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19int" {
   source = "./modules/win19int"
