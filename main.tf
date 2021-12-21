@@ -316,6 +316,7 @@ module "UbuntuEXT" {
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
+  pimage = var.ExistingImageName
 
   subnet_id = azurerm_subnet.extsubnet.id
 
