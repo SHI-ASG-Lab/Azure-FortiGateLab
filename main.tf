@@ -323,7 +323,7 @@ module "win19int" {
   count = var.Win19DC_int
   depends_on = [azurerm_subnet_route_table_association.intassoc]
 
-  VmName = "${var.Customer}-Win19INT-${count.index}-FortiLab"
+  VmName = "${var.Customer}-Win19INT-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
@@ -345,7 +345,7 @@ module "win19ext" {
   count = var.Win19DC_ext
   depends_on = [azurerm_subnet_route_table_association.extassoc]
 
-  VmName = "${var.Customer}-Win19EXT-${count.index}-FortiLab"
+  VmName = "${var.Customer}-Win19EXT-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
