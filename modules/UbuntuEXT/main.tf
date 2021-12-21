@@ -33,7 +33,7 @@ resource "azurerm_virtual_machine" "main" {
   storage_image_reference {
     publisher = "canonical"
     offer     = "0001-com-ubuntu-server-focal"
-    sku       = "20_04-lts-ARM"
+    sku       = "20_04-lts"
     version   = "latest"
   }
   storage_os_disk {
@@ -52,7 +52,7 @@ resource "azurerm_virtual_machine" "main" {
   }
   
   plan {
-    name      = "20_04-lts-ARM"
+    name      = "20_04-lts"
     publisher = "canonical"
     product   = "0001-com-ubuntu-server-focal"
   }
