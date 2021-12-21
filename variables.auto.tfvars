@@ -22,7 +22,7 @@ Win19DC_int      = 1
 
 Win19DC_ext      = 1
 
-ExistingImageName   = "Pkr-Ubuntu-East"
+ExistingImageName   = "Pkr-Ubuntu-West3"
 
 VmName              = "Ubuntu-WestUS"
 
