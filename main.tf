@@ -290,7 +290,7 @@ module "UbuntuINT" {
   count = var.ubuntu_int
   depends_on = [azurerm_subnet_route_table_association.intassoc]
 
-  UbuntuName = "${var.Customer}-UbINT-${count.index}-FortiLab"
+  UbuntuName = "${var.Customer}-UbINT-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
@@ -306,14 +306,14 @@ module "UbuntuINT" {
   tags = local.common_tags
 
 }
-/*
+
 # Add any number of Ubuntu servers
 module "UbuntuEXT" {
   source = "./modules/UbuntuEXT"
   count = var.ubuntu_ext
   depends_on = [azurerm_subnet_route_table_association.extassoc]
 
-  UbuntuName = "${var.Customer}-UbEXT-${count.index}-FortiLab"
+  UbuntuName = "${var.Customer}-UbEXT-${count.index}"
   
   resource_group_name = azurerm_resource_group.main.name
   RGlocation = azurerm_resource_group.main.location
@@ -329,7 +329,7 @@ module "UbuntuEXT" {
   tags = local.common_tags
 
 }
-*/
+
     
 # Reference Existing Image
 /*
