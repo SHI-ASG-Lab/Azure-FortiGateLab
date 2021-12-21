@@ -13,11 +13,11 @@ Customer         = "LAB"
 pword            = "tempLABpa55!!"
 
 # Number of Each
-/*
+
 ubuntu_int       = 1
 
 ubuntu_ext       = 1
-*/
+
 Win19DC_int      = 1
 
 Win19DC_ext      = 1
