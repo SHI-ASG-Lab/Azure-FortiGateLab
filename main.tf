@@ -283,7 +283,7 @@ module "Fortinet" {
 
     tags = local.common_tags
 }
-/*
+
 # Add any number of Ubuntu servers
 module "UbuntuINT" {
   source = "./modules/UbuntuINT"
@@ -305,7 +305,7 @@ module "UbuntuINT" {
   tags = local.common_tags
 
 }
-
+/*
 # Add any number of Ubuntu servers
 module "UbuntuEXT" {
   source = "./modules/UbuntuEXT"
@@ -330,7 +330,7 @@ module "UbuntuEXT" {
 */
     
 # Reference Existing Image
-
+/*
 data "azurerm_image" "custom" {
   resource_group_name = "LAB-PackerImages"
   name                = var.ExistingImageName
@@ -398,7 +398,7 @@ resource "azurerm_virtual_machine" "main" {
   }
   
   tags     = local.common_tags
-}
+}*/
   
 # Add in any number of "Windows 2019 Datacenter" Servers
 module "win19int" {
