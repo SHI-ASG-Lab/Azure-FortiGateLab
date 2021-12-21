@@ -1,5 +1,21 @@
+# Reference Existing Image
+
+data "azurerm_image" "custom" {
+  resource_group_name = "LAB-PackerImages"
+  name                = var.ExistingImageName
+}
+
+# Create a public IP for the system to use
+
+resource "azurerm_public_ip" "azPubIp" {
+  name = "${var.UbuntuName}-PubIp1"
+  resource_group_name = azurerm_resource_group.main.name
+  location = azurerm_resource_group.main.location
+  allocation_method = "Static"
+}
 
 # Create NIC for the VM
+
 resource "azurerm_network_interface" "main" {
   name                = "${var.UbuntuName}-nic"
   location            = var.RGlocation
@@ -19,24 +35,22 @@ resource "azurerm_virtual_machine" "main" {
   location              = var.RGlocation
   resource_group_name   = var.resource_group_name
   network_interface_ids = [azurerm_network_interface.main.id]
-  /*depends_on = [
-    azurerm_subnet_network_security_group_association.intSubAssocNsg
-  ]*/
   primary_network_interface_id = azurerm_network_interface.main.id
   vm_size               = "Standard_D2s_v3"
  
 
   # Uncomment this line to delete the OS disk automatically when deleting the VM
-  # delete_os_disk_on_termination = true
+   delete_os_disk_on_termination = true
 
   # Uncomment this line to delete the data disks automatically when deleting the VM
   # delete_data_disks_on_termination = true
 
   storage_image_reference {
-    publisher = "canonical"
+ /*   publisher = "canonical"
     offer     = "0001-com-ubuntu-server-focal"
     sku       = "20_04-lts"
-    version   = "20.04.202112020"
+    version   = "20.04.202112020"*/
+    id = "${data.azurerm_image.custom.id}"
   }
   storage_os_disk {
     name              = "${var.UbuntuName}-osdisk"
@@ -52,13 +66,13 @@ resource "azurerm_virtual_machine" "main" {
   os_profile_linux_config {
     disable_password_authentication = false
   }
-
+/*
   plan {
     name      = "20_04-lts"
     publisher = "canonical"
     product   = "0001-com-ubuntu-server-focal"
   }
-  
+  */
   tags     = var.tags
 }
 
