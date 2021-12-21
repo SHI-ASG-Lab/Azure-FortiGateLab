@@ -68,8 +68,8 @@ resource "azurerm_virtual_machine" "main" {
   plan {
     name      = "20_04-lts"
     publisher = "canonical"
-    product   = "0001-com-ubuntu-server-focal"*/
-  }
+    product   = "0001-com-ubuntu-server-focal"
+  }*/
   
   tags     = var.tags
 }
