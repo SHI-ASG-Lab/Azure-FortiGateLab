@@ -8,9 +8,9 @@ data "azurerm_image" "custom" {
 # Create a public IP for the system to use
 
 resource "azurerm_public_ip" "azPubIp" {
-  name = "${var.UbuntuName}-PubIp1"
-  resource_group_name = azurerm_resource_group.main.name
-  location = azurerm_resource_group.main.location
+  name = "${var.UbuntuName}-PubIp"
+  resource_group_name = var.resource_group_name
+  location            = var.RGlocation
   allocation_method = "Static"
 }
 
