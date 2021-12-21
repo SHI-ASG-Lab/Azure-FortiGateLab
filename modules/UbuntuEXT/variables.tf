@@ -31,3 +31,7 @@ variable "user" {
 variable "pass" {
   type = string
 }
+
+variable "pimage" {
+  type = string
+}
