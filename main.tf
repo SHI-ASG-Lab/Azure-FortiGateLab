@@ -349,12 +349,12 @@ resource "azurerm_public_ip" "azPubIp" {
 
 resource "azurerm_network_interface" "main" {
   name                = "${var.VmName}-nic1"
-  location            = data.azurerm_resource_group.main.location
-  resource_group_name = data.azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
 
   ip_configuration {
     name                          = "testconfiguration1"
-    subnet_id                     = data.azurerm_subnet.intsubnet.id
+    subnet_id                     = azurerm_subnet.intsubnet.id
     private_ip_address_allocation = "Dynamic"
     # private_ip_address            = "10.28.0.10"
     public_ip_address_id          = azurerm_public_ip.azPubIp.id
@@ -366,8 +366,8 @@ resource "azurerm_network_interface" "main" {
 
 resource "azurerm_virtual_machine" "main" {
   name                         = var.VmName
-  location                     = data.azurerm_resource_group.main.location
-  resource_group_name          = data.azurerm_resource_group.main.name
+  location                     = azurerm_resource_group.main.location
+  resource_group_name          = azurerm_resource_group.main.name
   network_interface_ids        = [azurerm_network_interface.main.id]
   primary_network_interface_id = azurerm_network_interface.main.id
   vm_size                     = "Standard_E2s_v3"
