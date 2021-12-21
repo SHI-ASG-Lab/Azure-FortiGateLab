@@ -2,7 +2,7 @@
 
 data "azurerm_image" "custom" {
   resource_group_name = "LAB-PackerImages"
-  name                = var.ExistingImageName
+  name                = var.pimage
 }
 
 # Create a public IP for the system to use
