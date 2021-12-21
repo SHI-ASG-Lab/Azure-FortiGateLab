@@ -36,7 +36,7 @@ resource "azurerm_virtual_machine" "main" {
     publisher = "canonical"
     offer     = "0001-com-ubuntu-server-focal"
     sku       = "20_04-lts"
-    version   = "latest"
+    version   = "20.04.202112020"
   }
   storage_os_disk {
     name              = "${var.UbuntuName}-osdisk"
