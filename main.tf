@@ -340,8 +340,8 @@ data "azurerm_image" "custom" {
 
 resource "azurerm_public_ip" "azPubIp" {
   name = "${var.VmName}-PubIp1"
-  resource_group_name = data.azurerm_resource_group.main.name
-  location = data.azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.main.name
+  location = azurerm_resource_group.main.location
   allocation_method = "Static"
 }
 
