@@ -69,7 +69,7 @@ variable "pword" {
   type = string
   default = "SHIisNumber1!"
 }
-/*
+
 variable "ubuntu_int" {
   type = number
   default = 1
@@ -79,7 +79,7 @@ variable "ubuntu_ext" {
   type = number
   default = 1
 }
-*/
+
 variable "Win19DC_int" {
   type = number
   default = 1
