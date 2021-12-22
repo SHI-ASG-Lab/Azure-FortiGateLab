@@ -152,6 +152,7 @@ resource "azurerm_network_security_rule" "ngsrule" {
   destination_address_prefix  = "*"
   resource_group_name         = azurerm_resource_group.main.name
   network_security_group_name = azurerm_network_security_group.nsg1.name
+}
 
 # Create a virtual network within the resource group
 resource "azurerm_virtual_network" "main" {
