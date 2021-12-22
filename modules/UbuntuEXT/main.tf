@@ -15,7 +15,7 @@ resource "azurerm_public_ip" "azPubIp" {
 }
 
 # Create NIC for the VM
-resource "azurerm_network_interface" "main" {
+resource "azurerm_network_interface" "pubip" {
   name                = "${var.UbuntuName}-nic"
   location            = var.RGlocation
   resource_group_name = var.resource_group_name
@@ -25,6 +25,7 @@ resource "azurerm_network_interface" "main" {
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "static"
     private_ip_address = "10.0.3.${var.ipnum}"
+    public_ip_address_id = var.pubip
     primary = true
   }
 }
