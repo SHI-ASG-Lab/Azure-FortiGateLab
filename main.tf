@@ -10,14 +10,14 @@ terraform {
 
 provider "azurerm" {
   features {}
-/*  subscription_id = var.TF_VAR_ARM_SUBSCRIPTION_ID
+  subscription_id = var.TF_VAR_ARM_SUBSCRIPTION_ID
   client_id       = var.TF_VAR_ARM_CLIENT_ID
   client_secret   = var.TF_VAR_ARM_CLIENT_SECRET
   tenant_id       = var.TF_VAR_ARM_TENANT_ID */
 }
 
 # Variable Declarations
-/*
+
 variable "TF_VAR_ARM_CLIENT_ID" {
   type = string
   sensitive = true
@@ -37,7 +37,7 @@ variable "TF_VAR_ARM_TENANT_ID" {
   type = string
   sensitive = true
 }
-*/
+
 variable "region" {
   type = string
 }
