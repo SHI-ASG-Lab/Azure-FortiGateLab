@@ -1,3 +1,11 @@
+# Create a public IP for the system to use
+
+resource "azurerm_public_ip" "azPubIp" {
+  name = "${var.UbuntuName}-PubIp"
+  resource_group_name = var.resource_group_name
+  location            = var.RGlocation
+  allocation_method = "Static"
+}
 
 # Create NIC for the VM
 resource "azurerm_network_interface" "main" {
