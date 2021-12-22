@@ -40,14 +40,17 @@ variable "TF_VAR_ARM_TENANT_ID" {
 
 variable "region" {
   type = string
+  default = "westus3"
 }
 
 variable "RG_Env_Tag" {
     type = string
+    default = "test"
 }
 
 variable "RG_SP_Name" {
   type = string
+  default = "LAB"
 }
 
 variable "Requestor" {
