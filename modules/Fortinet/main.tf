@@ -71,18 +71,18 @@ resource "azurerm_virtual_machine" "FortinetFW" {
   delete_data_disks_on_termination = true
 
   plan {
-    name = "fortinet_fg-vm_payg_20190624"
+    name = "fortinet_fg-vm_payg_2023"   #"fortinet_fg-vm_payg_20190624"
     publisher = "fortinet"
     product = "fortinet_fortigate-vm_v5"
   }
   storage_image_reference {
     publisher = "fortinet"
     offer     = "fortinet_fortigate-vm_v5"
-    sku       = "fortinet_fg-vm_payg_20190624"
+    sku       = "fortinet_fg-vm_payg_2023"   #"fortinet_fg-vm_payg_20190624"
     version   = "latest"
   }
   storage_os_disk {
-    name              = "osdisk1"
+    name              = "FG-LoD-osdisk"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "StandardSSD_LRS"
