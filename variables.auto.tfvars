@@ -14,10 +14,10 @@ pword            = "tempLABpa55!!"
 
 # Number of Each
 
-ubuntu_int       = 1
+ubuntu_int       = 0
 
-ubuntu_ext       = 1
+ubuntu_ext       = 0
 
-Win19DC_int      = 1
+Win19DC_int      = 0
 
-Win19DC_ext      = 1
+Win19DC_ext      = 0
