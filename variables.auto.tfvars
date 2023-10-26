@@ -2,7 +2,7 @@ region           = "westus3"
 
 RG_Env_Tag       = "dev"
 
-RG_SP_Name       = "LAB"
+RG_SP_Name       = "TEST"
 
 Requestor        = "JWilliams"
 
